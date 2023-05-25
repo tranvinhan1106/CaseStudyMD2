@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class CustomerService implements ICustomerService {
     CustomerRepository customerRepository = new CustomerRepository();
-
+    @Override
     public void addCustomer() {
         Scanner scanner = new Scanner(System.in);
         String customerCode;
@@ -99,14 +99,14 @@ public class CustomerService implements ICustomerService {
         }
 
     }
-
+    @Override
     public void findAll() throws IOException {
         List<Customer> customerList = customerRepository.findAll();
         for (Customer customer : customerList) {
             System.out.println(customer);
         }
     }
-
+    @Override
     public void setCustomer() {
         Scanner scanner = new Scanner(System.in);
         try {
@@ -202,6 +202,7 @@ public class CustomerService implements ICustomerService {
         }
 
     }
+    @Override
     public boolean checkID() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập id nhân viên :");

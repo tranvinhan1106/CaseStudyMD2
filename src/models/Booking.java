@@ -1,5 +1,7 @@
 package src.models;
 
+import java.time.LocalDate;
+
 public class Booking {
     private String bookingCode ;
     private String startDay ;
@@ -8,7 +10,7 @@ public class Booking {
     private String serviceName ;
     private String typeService ;
 
-    public Booking() {
+    public Booking(String id, LocalDate startDate, LocalDate endDate, String idCustomer, String nameService, String typeOfService) {
     }
 
     public Booking(String bookingCode, String startDay, String endDate, String customerCode, String serviceName, String typeService) {

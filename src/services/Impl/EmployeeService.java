@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 public class EmployeeService implements IEmployeeService {
     EmployeeRepository employeeRepository = new EmployeeRepository();
+    @Override
 
     public void addEmployee() {
         Scanner scanner = new Scanner(System.in);
@@ -139,13 +140,14 @@ public class EmployeeService implements IEmployeeService {
         }
     }
 
+    @Override
     public void findAll() throws IOException {
         List<Employee> employeeList = employeeRepository.findAll();
         for (Employee employee : employeeList) {
             System.out.println(employee);
         }
     }
-
+    @Override
     public boolean checkID() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập id nhân viên :");
@@ -153,7 +155,7 @@ public class EmployeeService implements IEmployeeService {
         employeeRepository.checkID(employeeCode);
         return true;
     }
-
+    @Override
     public void setEmployee() {
         Scanner scanner = new Scanner(System.in);
         try {

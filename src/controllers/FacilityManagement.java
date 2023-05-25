@@ -1,9 +1,12 @@
 package src.controllers;
 
+import src.services.Impl.FacilityService;
+
 import java.util.Scanner;
 
 public class FacilityManagement {
     public void displayFacilityManagement() {
+        FacilityService facilityService = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         int choice;
         boolean check = true;
@@ -17,10 +20,13 @@ public class FacilityManagement {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
+                    facilityService.displayFacility();
                     break;
                 case 2:
+                    facilityService.addFacility();
                     break;
                 case 3:
+//                    facilityService.displayListMaintenance();
                     break;
                 case 4:
                     check = false;
